@@ -1,7 +1,7 @@
 import React from "react";
-import { TextField, makeStyles, Button, Typography } from "@material-ui/core";
-import Navbar from './Navbar'
-
+import { TextField, makeStyles, Typography } from "@material-ui/core";
+import Navbar from "./Navbar";
+import LoginButton from "./LogoutButton.js";
 
 const useStyles = makeStyles({
     root: {
@@ -9,7 +9,7 @@ const useStyles = makeStyles({
         display: "flex",
         itemsAlign: "center",
         background: "#12c2e9",
-        background: "linear-gradient(to left, #12c2e9, #c471ed, #f64f59)"
+        background: "linear-gradient(to left, #12c2e9, #c471ed, #f64f59)",
     },
     form: {
         padding: "2rem",
@@ -28,31 +28,36 @@ export default function Login() {
 
     return (
         <>
-        <Navbar/>
-        <div className={classes.root}>
-            <form className={classes.form} noValidate autoComplete="off">
-                <Typography variant="h4" align="center">
-                    SIGN IN
-                </Typography>
-                <TextField
-                    id="email"
-                    label="Email"
-                    variant="outlined"
-                    fullWidth
-                    margin="normal"
-                />
-                <TextField
-                    id="email"
-                    label="Password"
-                    variant="outlined"
-                    fullWidth
-                    margin="normal"
-                />
-                <Button variant="contained" color="secondary" fullWidth style={{marginTop: "1rem"}}>
-                    Log In
-                </Button>
-            </form>
-        </div>
+            <Navbar />
+            <div className={classes.root}>
+                <form className={classes.form} noValidate autoComplete="off">
+                    <Typography variant="h4" align="center">
+                        SIGN IN
+                    </Typography>
+                    <TextField
+                        id="email"
+                        label="Email"
+                        variant="outlined"
+                        fullWidth
+                        margin="normal"
+                    />
+                    <TextField
+                        id="email"
+                        label="Password"
+                        variant="outlined"
+                        fullWidth
+                        margin="normal"
+                    />
+                    <LoginButton
+                        variant="contained"
+                        color="secondary"
+                        fullWidth
+                        style={{ marginTop: "1rem" }}
+                    >
+                        Log In
+                    </LoginButton>
+                </form>
+            </div>
         </>
     );
 }
